@@ -17,25 +17,27 @@ struct ContentView: View {
     @State var bGuess: Double
     @State var showAlert: Bool
     var body: some View {
-        VStack {
-            HStack {
-                VStack {
-                    Color(red: rTarget, green: gTarget, blue: bTarget)
-                    Text("Match the color")
+        NavigationView {
+            VStack {
+                HStack {
+                    VStack {
+                        Color(red: rTarget, green: gTarget, blue: bTarget)
+                        Text("Match the color")
+                    }
+                    VStack {
+                        Color(red: rGuess, green: gGuess, blue: bGuess)
+                        Text("R: \(Int(rGuess * 255))  G: \(Int(gGuess * 255))  B: \(Int(bGuess * 255))")
+                    }
                 }
-                VStack {
-                    Color(red: rGuess, green: gGuess, blue: bGuess)
-                    Text("R: \(Int(rGuess * 255))  G: \(Int(gGuess * 255))  B: \(Int(bGuess * 255))")
-                }
+                Button(action: { self.showAlert = true }) {
+                    Text("Hit me")
+                }.alert(isPresented: $showAlert) { () -> Alert in
+                    Alert(title: Text("Your Score"),message: Text(String(computeScore())))
+                }.padding()
+                SlideView(value: $rGuess, textColor: .red)
+                SlideView(value: $gGuess, textColor: .green)
+                SlideView(value: $bGuess, textColor: .blue)
             }
-            Button(action: { self.showAlert = true }) {
-                Text("Hit me")
-            }.alert(isPresented: $showAlert) { () -> Alert in
-                Alert(title: Text("Your Score"),message: Text(String(computeScore())))
-            }.padding()
-            ExtractedView(value: $rGuess, textColor: .red)
-            ExtractedView(value: $gGuess, textColor: .green)
-            ExtractedView(value: $bGuess, textColor: .blue)
         }
     }
     func computeScore() -> Int {
@@ -49,18 +51,12 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false)//.previewLayout(.fixed(width: 568, height: 320))
-    }
-}
-
-struct ExtractedView: View {
-    @Binding var value: Double
-    var textColor: Color
-    var body: some View {
-        HStack {
-            Text("0").foregroundColor(textColor)
-            Slider(value: $value)
-            Text("255").foregroundColor(textColor)
-        }.padding(.horizontal)
+        Group {
+            ContentView(rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false).environment(\.colorScheme, .dark)
+            //.previewLayout(.fixed(width: 568, height: 320))
+            ContentView(rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false).environment(\.colorScheme, .light)
+            //.previewLayout(.fixed(width: 568, height: 320))
+        }
+        
     }
 }
