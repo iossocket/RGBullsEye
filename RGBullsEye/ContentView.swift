@@ -20,23 +20,15 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 HStack {
-                    VStack {
-                        Color(red: rTarget, green: gTarget, blue: bTarget)
-                        Text("Match the color")
-                    }
-                    VStack {
-                        Color(red: rGuess, green: gGuess, blue: bGuess)
-                        Text("R: \(Int(rGuess * 255))  G: \(Int(gGuess * 255))  B: \(Int(bGuess * 255))")
-                    }
+                    TargetView(showAlert: $showAlert, rTarget: rTarget, gTarget: gTarget, bTarget: bTarget)
+                    MatchingView(rGuess: $rGuess, gGuess: $gGuess, bGuess: $bGuess)
                 }
                 Button(action: { self.showAlert = true }) {
                     Text("Hit me")
                 }.alert(isPresented: $showAlert) { () -> Alert in
                     Alert(title: Text("Your Score"),message: Text(String(computeScore())))
-                }.padding()
-                SlideView(value: $rGuess, textColor: .red)
-                SlideView(value: $gGuess, textColor: .green)
-                SlideView(value: $bGuess, textColor: .blue)
+                }.frame(width: nil, height: 35, alignment: .center)
+                ControlView(rGuess: $rGuess, gGuess: $gGuess, bGuess: $bGuess).frame(width: nil, height: 109, alignment: .center)
             }
         }
     }
@@ -46,6 +38,19 @@ struct ContentView: View {
         let bDiff = bGuess - bTarget
         let diff = sqrt(rDiff * rDiff + gDiff * gDiff + bDiff * bDiff)
         return Int((1.0 - diff) * 100.0 + 0.5)
+    }
+}
+
+struct ControlView: View {
+    @Binding var rGuess: Double
+    @Binding var gGuess: Double
+    @Binding var bGuess: Double
+    var body: some View {
+        VStack {
+            SlideView(value: $rGuess, textColor: .red)
+            SlideView(value: $gGuess, textColor: .green)
+            SlideView(value: $bGuess, textColor: .blue)
+        }
     }
 }
 
