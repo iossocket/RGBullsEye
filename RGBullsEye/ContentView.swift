@@ -12,6 +12,7 @@ struct ContentView: View {
     let rTarget = Double.random(in: 0..<1)
     let gTarget = Double.random(in: 0..<1)
     let bTarget = Double.random(in: 0..<1)
+    @ObservedObject var counter: TimeCounter
     @State var rGuess: Double
     @State var gGuess: Double
     @State var bGuess: Double
@@ -21,14 +22,16 @@ struct ContentView: View {
             VStack {
                 HStack {
                     TargetView(showAlert: $showAlert, rTarget: rTarget, gTarget: gTarget, bTarget: bTarget)
-                    MatchingView(rGuess: $rGuess, gGuess: $gGuess, bGuess: $bGuess)
+                    MatchingView(rGuess: $rGuess, gGuess: $gGuess, bGuess: $bGuess, counter: $counter.counter)
                 }
                 Button(action: { self.showAlert = true }) {
                     Text("Hit me")
                 }.alert(isPresented: $showAlert) { () -> Alert in
                     Alert(title: Text("Your Score"),message: Text(String(computeScore())))
                 }.frame(width: nil, height: 35, alignment: .center)
-                ControlView(rGuess: $rGuess, gGuess: $gGuess, bGuess: $bGuess).frame(width: nil, height: 109, alignment: .center)
+                SlideView(value: $rGuess, textColor: .red)
+                SlideView(value: $gGuess, textColor: .green)
+                SlideView(value: $bGuess, textColor: .blue)
             }
         }
     }
@@ -41,27 +44,13 @@ struct ContentView: View {
     }
 }
 
-struct ControlView: View {
-    @Binding var rGuess: Double
-    @Binding var gGuess: Double
-    @Binding var bGuess: Double
-    var body: some View {
-        VStack {
-            SlideView(value: $rGuess, textColor: .red)
-            SlideView(value: $gGuess, textColor: .green)
-            SlideView(value: $bGuess, textColor: .blue)
-        }
-    }
-}
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView(rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false).environment(\.colorScheme, .dark)
+            ContentView(counter: TimeCounter(), rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false).environment(\.colorScheme, .dark)
             //.previewLayout(.fixed(width: 568, height: 320))
-            ContentView(rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false).environment(\.colorScheme, .light)
+            ContentView(counter: TimeCounter(), rGuess: 0.7, gGuess: 0.3, bGuess: 0.6, showAlert: false).environment(\.colorScheme, .light)
             //.previewLayout(.fixed(width: 568, height: 320))
         }
-        
     }
 }

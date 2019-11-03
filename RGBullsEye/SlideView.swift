@@ -16,7 +16,7 @@ struct SlideView: View {
             Text("0").foregroundColor(textColor)
             Slider(value: $value).background(textColor) .cornerRadius(10)
             Text("255").foregroundColor(textColor)
-        }.padding(.horizontal)
+        }.padding(.horizontal).frame(width: nil, height: 31, alignment: .center)
     }
 }
 
