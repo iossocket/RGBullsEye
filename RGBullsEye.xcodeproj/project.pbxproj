@@ -47,6 +47,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		503F45A9237302720049308E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				50661A9C23520585005F26FE /* ContentView.swift */,
+				50661AF22358A1B7005F26FE /* DemoView.swift */,
+				50661AF42358A51E005F26FE /* SlideView.swift */,
+				503F45A3236299050049308E /* MatchingView.swift */,
+				503F45A523629CB70049308E /* TargetView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		503F45AA237302A00049308E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				50661A9823520585005F26FE /* AppDelegate.swift */,
+				50661A9A23520585005F26FE /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		503F45AB237302C10049308E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				503F45A72369D33D0049308E /* TimeCounter.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		50661A8C23520585005F26FE = {
 			isa = PBXGroup;
 			children = (
@@ -66,14 +95,9 @@
 		50661A9723520585005F26FE /* RGBullsEye */ = {
 			isa = PBXGroup;
 			children = (
-				50661A9823520585005F26FE /* AppDelegate.swift */,
-				50661A9A23520585005F26FE /* SceneDelegate.swift */,
-				50661A9C23520585005F26FE /* ContentView.swift */,
-				503F45A72369D33D0049308E /* TimeCounter.swift */,
-				50661AF22358A1B7005F26FE /* DemoView.swift */,
-				50661AF42358A51E005F26FE /* SlideView.swift */,
-				503F45A3236299050049308E /* MatchingView.swift */,
-				503F45A523629CB70049308E /* TargetView.swift */,
+				503F45AA237302A00049308E /* App */,
+				503F45AB237302C10049308E /* ViewModel */,
+				503F45A9237302720049308E /* View */,
 				50661A9E23520586005F26FE /* Assets.xcassets */,
 				50661AA323520586005F26FE /* LaunchScreen.storyboard */,
 				50661AA623520586005F26FE /* Info.plist */,
