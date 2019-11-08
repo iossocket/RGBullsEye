@@ -10,6 +10,10 @@
 		503F45A4236299050049308E /* MatchingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45A3236299050049308E /* MatchingView.swift */; };
 		503F45A623629CB70049308E /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45A523629CB70049308E /* TargetView.swift */; };
 		503F45A82369D33D0049308E /* TimeCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45A72369D33D0049308E /* TimeCounter.swift */; };
+		503F45CF23730A3F0049308E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45CE23730A3F0049308E /* ViewController.swift */; };
+		503F45D123730BD10049308E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F45D023730BD10049308E /* Storyboard.storyboard */; };
+		503F45D323730C680049308E /* ViewControllerRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45D223730C680049308E /* ViewControllerRepresentation.swift */; };
+		503F45D6237453330049308E /* ColorUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45D5237453330049308E /* ColorUISlider.swift */; };
 		50661A9923520585005F26FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50661A9823520585005F26FE /* AppDelegate.swift */; };
 		50661A9B23520585005F26FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50661A9A23520585005F26FE /* SceneDelegate.swift */; };
 		50661A9D23520585005F26FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50661A9C23520585005F26FE /* ContentView.swift */; };
@@ -24,6 +28,10 @@
 		503F45A3236299050049308E /* MatchingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingView.swift; sourceTree = "<group>"; };
 		503F45A523629CB70049308E /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
 		503F45A72369D33D0049308E /* TimeCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCounter.swift; sourceTree = "<group>"; };
+		503F45CE23730A3F0049308E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		503F45D023730BD10049308E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		503F45D223730C680049308E /* ViewControllerRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentation.swift; sourceTree = "<group>"; };
+		503F45D5237453330049308E /* ColorUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUISlider.swift; sourceTree = "<group>"; };
 		50661A9523520585005F26FE /* RGBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50661A9823520585005F26FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50661A9A23520585005F26FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +84,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		503F45D42374531B0049308E /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				503F45D5237453330049308E /* ColorUISlider.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
 		50661A8C23520585005F26FE = {
 			isa = PBXGroup;
 			children = (
@@ -95,10 +111,14 @@
 		50661A9723520585005F26FE /* RGBullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				503F45D42374531B0049308E /* UIView */,
 				503F45AA237302A00049308E /* App */,
 				503F45AB237302C10049308E /* ViewModel */,
 				503F45A9237302720049308E /* View */,
 				50661A9E23520586005F26FE /* Assets.xcassets */,
+				503F45CE23730A3F0049308E /* ViewController.swift */,
+				503F45D223730C680049308E /* ViewControllerRepresentation.swift */,
+				503F45D023730BD10049308E /* Storyboard.storyboard */,
 				50661AA323520586005F26FE /* LaunchScreen.storyboard */,
 				50661AA623520586005F26FE /* Info.plist */,
 				50661AA023520586005F26FE /* Preview Content */,
@@ -173,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50661AA523520586005F26FE /* LaunchScreen.storyboard in Resources */,
+				503F45D123730BD10049308E /* Storyboard.storyboard in Resources */,
 				50661AA223520586005F26FE /* Preview Assets.xcassets in Resources */,
 				50661A9F23520586005F26FE /* Assets.xcassets in Resources */,
 			);
@@ -185,14 +206,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503F45D6237453330049308E /* ColorUISlider.swift in Sources */,
 				50661A9923520585005F26FE /* AppDelegate.swift in Sources */,
 				503F45A4236299050049308E /* MatchingView.swift in Sources */,
 				50661AF32358A1B7005F26FE /* DemoView.swift in Sources */,
+				503F45CF23730A3F0049308E /* ViewController.swift in Sources */,
 				503F45A82369D33D0049308E /* TimeCounter.swift in Sources */,
 				50661A9B23520585005F26FE /* SceneDelegate.swift in Sources */,
 				50661A9D23520585005F26FE /* ContentView.swift in Sources */,
 				50661AF52358A51E005F26FE /* SlideView.swift in Sources */,
 				503F45A623629CB70049308E /* TargetView.swift in Sources */,
+				503F45D323730C680049308E /* ViewControllerRepresentation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

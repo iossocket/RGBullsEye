@@ -32,6 +32,10 @@ struct ContentView: View {
                 SlideView(value: $rGuess, textColor: .red)
                 SlideView(value: $gGuess, textColor: .green)
                 SlideView(value: $bGuess, textColor: .blue)
+                ColorUISlider(color: .red, value: .constant(0.5))
+                NavigationLink(destination: ViewControllerRepresentation()) {
+                    Text("Play BullsEye").frame(width: nil, height: 31, alignment: .center)
+                }.padding(.bottom)
             }
         }
     }
