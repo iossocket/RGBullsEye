@@ -1,27 +1,27 @@
 import Foundation
 import Combine
 
-class BullsEyeGame: ObservableObject {
+public class BullsEyeGame: ObservableObject {
 
-    let objectWillChange = PassthroughSubject<Void, Never>()
+    public let objectWillChange = PassthroughSubject<Void, Never>()
 
-    var round = 0
-    var startValue = 50
-    var targetValue = 50
-    var scoreRound = 0
-    var scoreTotal = 0
+    public var round = 0
+    public var startValue = 50
+    public var targetValue = 50
+    public var scoreRound = 0
+    public var scoreTotal = 0
   
-    init() {
+    public init() {
         startNewGame()
     }
   
-    func startNewGame() {
+    public func startNewGame() {
         round = 0
         scoreTotal = 0
         startNewRound()
     }
   
-    func startNewRound() {
+    public func startNewRound() {
         round += 1
         scoreRound = 0
         startValue = 50
@@ -29,7 +29,7 @@ class BullsEyeGame: ObservableObject {
         objectWillChange.send()
     }
   
-    func checkGuess(_ guess: Int) {
+    public func checkGuess(_ guess: Int) {
         let difference = abs(targetValue - guess)
         scoreRound = 100 - difference
         scoreTotal = scoreTotal + scoreRound

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct BullsEyeContentView: View {
+public struct BullsEyeContentView: View {
     @ObservedObject private var game = BullsEyeGame()
 
     @State private var currentValue = 50.0
@@ -10,9 +10,11 @@ struct BullsEyeContentView: View {
         abs(Double(game.targetValue) - currentValue) / 100.0
     }
 
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         VStack {
-            Text("Put the Bull's Eye as close as you can to: \(game.targetValue)")
+            Text("Aim to: \(game.targetValue)")
             HStack {
                 Text("0")
                 Slider(value: $currentValue, in: 1.0...100.0, step: 1.0)
@@ -35,7 +37,7 @@ struct BullsEyeContentView: View {
             }
             .padding()
             HStack {
-                Text("Total Score: \(game.scoreTotal)")
+                Text("Total: \(game.scoreTotal)")
                 Text("Round: \(game.round)")
             }
         }
