@@ -14,6 +14,8 @@
 		503F45D123730BD10049308E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503F45D023730BD10049308E /* Storyboard.storyboard */; };
 		503F45D323730C680049308E /* ViewControllerRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45D223730C680049308E /* ViewControllerRepresentation.swift */; };
 		503F45D6237453330049308E /* ColorUISlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45D5237453330049308E /* ColorUISlider.swift */; };
+		503F45DB237F99810049308E /* BullsEyeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45D9237F99810049308E /* BullsEyeGame.swift */; };
+		503F45DE237F9A890049308E /* BullsEyeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503F45DD237F9A890049308E /* BullsEyeContentView.swift */; };
 		50661A9923520585005F26FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50661A9823520585005F26FE /* AppDelegate.swift */; };
 		50661A9B23520585005F26FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50661A9A23520585005F26FE /* SceneDelegate.swift */; };
 		50661A9D23520585005F26FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50661A9C23520585005F26FE /* ContentView.swift */; };
@@ -32,6 +34,9 @@
 		503F45D023730BD10049308E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		503F45D223730C680049308E /* ViewControllerRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerRepresentation.swift; sourceTree = "<group>"; };
 		503F45D5237453330049308E /* ColorUISlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUISlider.swift; sourceTree = "<group>"; };
+		503F45D7237F90170049308E /* Game */ = {isa = PBXFileReference; lastKnownFileType = text; name = Game; path = package/Game; sourceTree = SOURCE_ROOT; };
+		503F45D9237F99810049308E /* BullsEyeGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BullsEyeGame.swift; sourceTree = "<group>"; };
+		503F45DD237F9A890049308E /* BullsEyeContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BullsEyeContentView.swift; sourceTree = "<group>"; };
 		50661A9523520585005F26FE /* RGBullsEye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RGBullsEye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50661A9823520585005F26FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50661A9A23520585005F26FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +97,15 @@
 			path = UIView;
 			sourceTree = "<group>";
 		};
+		503F45D8237F99520049308E /* BullsEye */ = {
+			isa = PBXGroup;
+			children = (
+				503F45D9237F99810049308E /* BullsEyeGame.swift */,
+				503F45DD237F9A890049308E /* BullsEyeContentView.swift */,
+			);
+			path = BullsEye;
+			sourceTree = "<group>";
+		};
 		50661A8C23520585005F26FE = {
 			isa = PBXGroup;
 			children = (
@@ -111,12 +125,14 @@
 		50661A9723520585005F26FE /* RGBullsEye */ = {
 			isa = PBXGroup;
 			children = (
+				503F45D7237F90170049308E /* Game */,
 				503F45D42374531B0049308E /* UIView */,
 				503F45AA237302A00049308E /* App */,
 				503F45AB237302C10049308E /* ViewModel */,
 				503F45A9237302720049308E /* View */,
 				50661A9E23520586005F26FE /* Assets.xcassets */,
 				503F45CE23730A3F0049308E /* ViewController.swift */,
+				503F45D8237F99520049308E /* BullsEye */,
 				503F45D223730C680049308E /* ViewControllerRepresentation.swift */,
 				503F45D023730BD10049308E /* Storyboard.storyboard */,
 				50661AA323520586005F26FE /* LaunchScreen.storyboard */,
@@ -206,6 +222,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				503F45DE237F9A890049308E /* BullsEyeContentView.swift in Sources */,
 				503F45D6237453330049308E /* ColorUISlider.swift in Sources */,
 				50661A9923520585005F26FE /* AppDelegate.swift in Sources */,
 				503F45A4236299050049308E /* MatchingView.swift in Sources */,
@@ -214,6 +231,7 @@
 				503F45A82369D33D0049308E /* TimeCounter.swift in Sources */,
 				50661A9B23520585005F26FE /* SceneDelegate.swift in Sources */,
 				50661A9D23520585005F26FE /* ContentView.swift in Sources */,
+				503F45DB237F99810049308E /* BullsEyeGame.swift in Sources */,
 				50661AF52358A51E005F26FE /* SlideView.swift in Sources */,
 				503F45A623629CB70049308E /* TargetView.swift in Sources */,
 				503F45D323730C680049308E /* ViewControllerRepresentation.swift in Sources */,
